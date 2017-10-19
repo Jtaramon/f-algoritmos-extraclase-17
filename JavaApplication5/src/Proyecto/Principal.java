@@ -14,74 +14,57 @@ import java.util.Scanner;
 public class Principal {
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-
-        //Variables
-        String nombre;
-        String apellido;
-
-        //Asignatura
-        String asignatura;
-        String asignatura2;
-
-        //Creditos:
-        int credito1;
-        int credito2;
-
-        //Titulo 3er Nivel
-        String titulo;
-        String universidad;
-
-        //Titulo 4to Nivel
-        String titulo2;
-        String universidad2;
-
-        //Ingresar NOMBRES del DOCENTE:
-        System.out.print("Ingrese Nombre: ");
-        nombre = teclado.nextLine();
-        System.out.print("Ingrese Apellido: ");
-        apellido = teclado.nextLine();
-
-        //Asignaturas
-        System.out.print("Ingrese Asignatura Nro. 1 = ");
-        asignatura = teclado.nextLine();
-        System.out.print("Creditos: ");
-        credito1 = teclado.nextInt();
-        teclado.nextLine();
-        System.out.print("Ingrese Asignatura Nro. 2 = ");
-        asignatura2 = teclado.nextLine();
-        System.out.print("Creditos: ");
-        credito2 = teclado.nextInt();
-        teclado.nextLine();
-        System.out.print("Titulo de 3er. Nivel: ");
-        titulo = teclado.nextLine();
-        System.out.print("Ingrese la Universidad: ");
-        universidad = teclado.nextLine();
-        System.out.print("Titulo de 4to. Nivel: ");
-        titulo2 = teclado.nextLine();
-        System.out.print("Ingrese la Universidad: ");
-        universidad2 = teclado.nextLine();
-
-        //..............
-        Docente profesor = new Docente();
-        //Agregar Nombre
-        profesor.agregar_nombres(nombre);
-        //Agregar Apellido
-        profesor.agregar_apellidos(apellido);
         
+        System.out.println("Caso 1");
+        Asignatura a1 = new Asignatura();
+        a1.establecer_nombre("Matematicas");
+        a1.establecer_creditos(8);
+        Asignatura a2 = new Asignatura();
+        a2.establecer_nombre("Fisica");
+        a2.establecer_creditos(6);
         
-        Asignatura materia = new Asignatura();
-        materia.agregar_asignatura(asignatura);
-        materia.agregar_asignatura2(asignatura2);
+        Titulo tit = new Titulo();
+        tit.establecer_nombre("Licenciado en Fisico Matematicas");
+        tit.establecer_nombre_universidad("Universidad Politecnica");
+        Titulo tit2 = new Titulo();
+        tit2.establecer_nombre("Magister en Docencia Matematica");
+        tit2.establecer_nombre_universidad("Universidad Valenciana");
         
+        Docente docente = new Docente ();
+        docente.establecer_nombre("Luis V.");
+        docente.establecer_apellidos("Perez J.");
+        docente.establecer_asignatura(a1);
+        docente.establecer_asignatura2(a2);
+        docente.establecer_titulo_tercer(tit);
+        docente.establecer_titulo_cuarto(tit2);
         
-        Titulo titulos = new Titulo();
-        titulos.agregar_titulo(titulo);
-        titulos.agregar_titulo2(titulo2);
-        titulos.agregar_universidad(universidad);
-        titulos.agregar_universidad(universidad2);
+        System.out.println(docente);
+        //Caso 2
         
-        profesor.imprimir_docente();
+        System.out.println("Caso 2");
+        Asignatura a3 = new Asignatura();
+        a3.establecer_nombre("Sociales");
+        a3.establecer_creditos(9);
+        Asignatura a4 = new Asignatura();
+        a4.establecer_nombre("Literatura");
+        a4.establecer_creditos(10);
+        
+        Titulo tit3 = new Titulo();
+        tit3.establecer_nombre("Licenciado en ciencias sociales");
+        tit3.establecer_nombre_universidad("Universidad Salesiana");
+        Titulo tit4 = new Titulo();
+        tit4.establecer_nombre("Magister en Docencia Social");
+        tit4.establecer_nombre_universidad("Universidad Cataluña");
+        
+        Docente docente2 = new Docente ();
+        docente2.establecer_nombre("Ana M.");
+        docente2.establecer_apellidos("Velez P.");
+        docente2.establecer_asignatura(a3);
+        docente2.establecer_asignatura2(a4);
+        docente2.establecer_titulo_tercer(tit3);
+        docente2.establecer_titulo_cuarto(tit4);
+        
+        System.out.println(docente2);
     }
 
 }

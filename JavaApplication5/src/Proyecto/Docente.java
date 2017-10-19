@@ -12,88 +12,71 @@ package Proyecto;
 public class Docente {
     private String nombres;
     private String apellidos;
-    private String titulo_tercer_nivel;
-    private String titulo_cuarto_nivel;
-    private String asignatura_1;
-    private String asignatura2;
+    private Asignatura asignatura_1;
+    private Asignatura asignatura_2;
     
-    //NOMBRES
-    public void agregar_nombres (String nombre){
-        nombres=nombre;
+    private Titulo titulo_tercer_nivel;
+    private Titulo titulo_cuarto_nivel;
+    
+    public void establecer_nombre (String n){
+        nombres= n;
     }
-    public String obtener_nombres(){
+    public String obtener_nombre (){
         return nombres;
     }
+
+//NOmbres
     
-    
-    //APELLIDOS
-    public void agregar_apellidos (String apellido){
-        apellidos = apellido;
+    public void establecer_apellidos (String ap){
+        apellidos = ap;
     }
     public String obtener_apellidos(){
         return apellidos;
-        
     }
     
     
     
-    //TITULO DE TERCER NIVEL
-    public void agregar_tercernivel (String tercer){
-        titulo_tercer_nivel = tercer;
+    public void establecer_asignatura (Asignatura a1){
+        asignatura_1 = a1;
     }
-    public String obtener_tercernivel(){
-        return titulo_tercer_nivel;
-    }
-    
-    
-    
-    //TITULO DE CUARTO NIVEL
-    public void agregar_cuartonivel (String cuarto){
-        titulo_cuarto_nivel = cuarto;
-    }
-    public String obtener_cuartonivel(){
-        return titulo_cuarto_nivel;
-    }
-    
-    
-    
-    
-    //ASIGNATURA 1
-    public void agregar_asignatura (String asig){
-        asignatura_1 = asig;
-    }
-    public String obtener_asignatura(){
+    public Asignatura obtener_asignatura(){
         return asignatura_1;
     }
     
     
-    
-    
-    //ASIGNATURA 2
-    public void agregar_asignaturados (String asig){
-        asignatura2 = asig;
-        
+    public void establecer_asignatura2 (Asignatura a1){
+        asignatura_2 = a1;
     }
-    public String obtener_asignaturados(){
-        return asignatura2;
+    public Asignatura obtener_asignatura2(){
+        return asignatura_2;
     }
     
-    
-    //DOCENTE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    Asignatura materia = new Asignatura();
-    Titulo titulo = new Titulo();
-    public void imprimir_docente(){
-        System.out.printf("Datos del Docente:\nNombres:"
-                + " %s\nApellidos: %s\nTiene a su cargo las asignaturas:"
-                + "\n\tAsignatura 1: %s con numero de creditos %d"
-                + "\n\tAsignatura 2: %s con numero de creditos %d"
-                + "\nEl docente tiene los siguientes títulos académicos"
-                + "\n\tTitulo 3er nivel: %s - %s"
-                + "\n\tTitulo 4to nivel: %s - %s\n"
-                ,obtener_nombres(),obtener_apellidos(),
-                materia.obtener_asignatura(),materia.obtener_creditos(),
-                materia.obtener_asignatura2(),materia.obtener_creditos2(),
-                titulo.obtener_titulo(),titulo.obtener_universidad(),
-                titulo.obtener_titulo2(),titulo.obtener_universidad2());
+    //TITULOS 
+    public void establecer_titulo_tercer(Titulo n){
+        titulo_tercer_nivel = n;
     }
+    public Titulo obtener_titulo_tercer(){
+        return titulo_tercer_nivel;
+    }
+    
+    public void establecer_titulo_cuarto(Titulo n){
+        titulo_cuarto_nivel = n;
+    }
+    public Titulo obtener_titulo_cuarto(){
+        return titulo_cuarto_nivel;
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("Datos del Docente:\nNombres: %s\nApellidos: %s"
+                + "\nTiene a su cargo las asignaturas:\n\tAsignatura 1: %s\n"
+                + "\tAsignatura 2: %s\nEl docente tiene los siguientes títulos académicos"
+                + "\n\tTitulo 3er. Nivel: %s\n\tTitulo 4to Nivel: %s"
+                ,obtener_nombre(),obtener_apellidos(),obtener_asignatura(),
+                obtener_asignatura2(),obtener_titulo_tercer(),obtener_titulo_cuarto());
+        return cadena;
+    }
+    
+     
+    
 }

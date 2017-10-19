@@ -12,38 +12,32 @@ package Proyecto;
 public class Asignatura {
     private String nombre;
     private int creditos;
-    private String nombre2;
-    private int creditos2;
     
-
-
-//TITULO
-    public void agregar_asignatura (String asignatura){
-        nombre = asignatura;
+    public void establecer_nombre(String v){
+        nombre = v;
     }
-    public String obtener_asignatura (){
+    public String obtener_nombre(){
+        
         return nombre;
     }
-    public void agregar_asignatura2 (String asignatura){
-        nombre2 = asignatura;
-    }
-    public String obtener_asignatura2 (){
-        return nombre2;
-    }
-    
-    
-    
-    //CREDITOS
-    public void agregar_creditos (int creditos){
-        this.creditos = creditos; 
+    public void establecer_creditos(int c){
+        creditos = c;
     }
     public int obtener_creditos(){
+        
         return creditos;
     }
-    public void agregar_creditos2 (int creditos){
-        creditos2 = creditos;
+
+    @Override
+    public String toString() {
+        String cadena = String.format("%s con Numero de Creditos %d"
+                ,obtener_nombre(),obtener_creditos() );
+        
+        return cadena;
     }
-    public int obtener_creditos2(){
-        return creditos2;
-    }
+    
+    
+    
+    
+    
 }

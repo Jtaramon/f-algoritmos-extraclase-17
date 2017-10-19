@@ -10,42 +10,32 @@ package Proyecto;
  * @author Juan Ramón
  */
 public class Titulo {
-    private String nombre;
-    private String nombre_universidad;
-    private String nombre2;
-    private String nombre_universidad2;
+    String nombre;
+    String nombre_universidad;
     
-    //TITULO
-    public void agregar_titulo(String titulo){
-        nombre = titulo;
+    public void establecer_nombre (String n){
+        nombre=n;
     }
-    public String obtener_titulo(){
+    public String obtener_nombre (){
         return nombre;
-    
-        
-    }   
-    public void agregar_titulo2(String titulo){
-        nombre2 = titulo;
     }
-    public String obtener_titulo2(){
-        return nombre2;
-        
-    }   
-    //UNIVERSIDAD
     
-    public void agregar_universidad(String uni){
-        nombre_universidad = uni;
+    public void establecer_nombre_universidad (String nu){
+        nombre_universidad = nu;
     }
-    public String obtener_universidad(){
+    public String obtener_nombre_universidad (){
         return nombre_universidad;
-        
     }
-    public void agregar_universidad2(String uni){
-        nombre_universidad2 = uni;
+
+    @Override
+    public String toString() {
+        String cadena = String.format("%s - %s",
+                obtener_nombre(),obtener_nombre_universidad());
+        return cadena;
     }
-    public String obtener_universidad2(){
-        return nombre_universidad2;
-        
-    }
+    
+    
+    
     
 }
+
